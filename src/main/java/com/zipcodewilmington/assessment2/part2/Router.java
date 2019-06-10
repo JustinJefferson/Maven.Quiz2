@@ -50,6 +50,11 @@ public class Router {
 
 
         }
+
+        if(routerMap.containsKey("/students")) {
+            result += "/students" + routerMap.get("/students") + "\n";
+        }
+        
         System.out.println(result);
 
 
