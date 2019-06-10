@@ -52,16 +52,25 @@ public class ListUtility {
         Integer value = null;
         Integer most = 0;
 
-        for(Integer num : list) {
+        for(int i = 0; i < list.size(); i++) {
 
             Integer count = 0;
 
-            for(Integer compare : list) {
-                if(num.equals(compare)) count++;
+            if(list.get(i) != null) {
+
+                for (int j = 0; j < list.size(); j++) {
+                    if (list.get(i).equals(list.get(j))) count++;
+                }
+            }
+            else{
+
+                for (int j = 0; j < list.size(); j++) {
+                    if(list.get(j) == null) count++;
+                }
             }
 
             if(count > most){
-                value = num;
+                value = list.get(i);
                 most = count;
             }
         }

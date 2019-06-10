@@ -1,6 +1,7 @@
 package com.zipcodewilmington.assessment2.part2;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Router {
@@ -9,7 +10,7 @@ public class Router {
 
 
     public Router(){
-        routerMap = new HashMap<>();
+        routerMap = new LinkedHashMap<>();
     }
 
     public void add(String path, String controller) {
@@ -36,9 +37,23 @@ public class Router {
     @Override
     public String toString() {
 
+        String result = "";
+        Integer index = 0;
+
+        for(String path : routerMap.keySet()) {
+            String key = path;
+            String value = routerMap.get(path);
+            result += key + value + "\n";
+
+//            index++;
+//            if(index < routerMap.size()) result += "\n";
 
 
-        return null;//(path + " -> " + getController(path));
+        }
+        System.out.println(result);
+
+
+        return result;//(path + " -> " + getController(path));
 
     }
 }
